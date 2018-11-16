@@ -58,6 +58,7 @@ public class QQ
      * @throws ClassNotFoundException 
      * @throws JavaModelException 
      */
+    @SuppressWarnings("deprecation")
     public static void main(String [] args) throws NullPointerException, IOException, ClassNotFoundException, JavaModelException
     {
         FileHelp v_FileHelp    = new FileHelp();
