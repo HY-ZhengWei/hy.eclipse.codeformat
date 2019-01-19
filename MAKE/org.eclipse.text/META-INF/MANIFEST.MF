@@ -9,8 +9,8 @@ Require-Bundle: org.eclipse.core.commands;bundle-version="[3.5.0,4.0.0
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Eclipse-SourceReferences: scm:git:git://git.eclipse.org/gitroot/platfo
- rm/eclipse.platform.text.git;path="org.eclipse.text";tag="I20180822-2
- 000";commitId=a970af90f0c8aa42321e06784d91a5b307e48dfd
+ rm/eclipse.platform.text.git;path="org.eclipse.text";tag="I20180923-1
+ 800";commitId=542f40e5776d928308fc6443fe6293463e2b5483
 Bundle-Vendor: %providerName
 Import-Package: com.ibm.icu.text,com.ibm.icu.util
 Export-Package: org.eclipse.jface.text; text="split"; mandatory:="text
@@ -20,9 +20,9 @@ Export-Package: org.eclipse.jface.text; text="split"; mandatory:="text
   mandatory:="text",org.eclipse.text.edits,org.eclipse.text.templates,
  org.eclipse.text.undo
 Bundle-Name: %pluginName
-Bundle-Version: 3.7.0.v20180822-1511
+Bundle-Version: 3.8.0.v20180923-1636
 Bundle-Localization: plugin
-Created-By: Apache Maven 3.3.3
+Created-By: Apache Maven 3.5.4
 Build-Jdk: 1.8.0_162
 
 Name: org/eclipse/jface/text/IDocumentInformationMappingExtension.clas
@@ -40,7 +40,7 @@ Name: org/eclipse/jface/text/ITextStore.class
 SHA-256-Digest: JOlHOgdcUwK8eCQZf8xb7Yml/JzQv5/i1R03uC0UFkY=
 
 Name: org/eclipse/jface/text/templates/TemplateContext.class
-SHA-256-Digest: y+T/NN/IKkDYhTnBlinIQFT+99rU45eOSx/tV+8qAIc=
+SHA-256-Digest: 0EbjpeuxfWtQDJt80yc4nc3hQFlX7p3/ElSs6drpxTU=
 
 Name: org/eclipse/jface/text/IDocumentPartitionerExtension3.class
 SHA-256-Digest: H3sT6tLJpGhcf5SAB0vXX5iX4rhBTkWB5la3kT4sohQ=
@@ -135,7 +135,7 @@ Name: org/eclipse/jface/text/IRegion.class
 SHA-256-Digest: HO3dfk4ukysK6jY8Tl5XMzUTAfLS2rCKTtKs+hoHuw8=
 
 Name: .api_description
-SHA-256-Digest: G18WXpuUr+qrAV6wKlGUNp1JUDNKlY0yr06XZRxT8po=
+SHA-256-Digest: xCTUP8YZB5O77btGiWWUERXVc14d5EbzwGy/wARraMo=
 
 Name: org/eclipse/jface/text/ILineTrackerExtension.class
 SHA-256-Digest: hafXpa2G29SOY4KIxkXoYdXm27Hu+op+92TH8uPsYv0=
@@ -524,7 +524,7 @@ Name: org/eclipse/jface/text/IRepairableDocument.class
 SHA-256-Digest: kZOQBIwCNMSA91vZEJdFwYKlVfhN5vQTNYCy37I+hHA=
 
 Name: org/eclipse/text/templates/TemplatePersistenceData.class
-SHA-256-Digest: L0BF662ETtHvXN93dZOTJZbGIWnANMp2DUD3ooXVJFQ=
+SHA-256-Digest: ZyFa1zxD39B49wZsQq+iSg89Yx1y9ezi89agLnuPjIw=
 
 Name: org/eclipse/jface/text/TreeLineTracker.class
 SHA-256-Digest: Dycu9ZfV9D/gBe8iE38sgtvJGDZG+2Yi0FxWUkep2mw=

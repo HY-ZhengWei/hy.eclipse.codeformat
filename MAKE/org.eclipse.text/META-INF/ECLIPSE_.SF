@@ -1,7 +1,7 @@
 Signature-Version: 1.0
-SHA-256-Digest-Manifest-Main-Attributes: AAX7/hsB5yfBp7rQGknAyKT/6mPgC
- 5XMqs0RdUAPQNE=
-SHA-256-Digest-Manifest: D0ZpHtmF8ywxjd72clzXH8/bCYZtWjUpEYSQFpov9h0=
+SHA-256-Digest-Manifest-Main-Attributes: jR6tCJo2PJaVJ8eNrvEXeR64Fv3N+
+ Z3bYwwkPrGLtfw=
+SHA-256-Digest-Manifest: xT273xpwvGpYsx4NgYks+eYUBnO0s9PPQn8rezE3XY8=
 Created-By: 1.8.0_162 (Oracle Corporation)
 
 Name: org/eclipse/jface/text/IDocumentInformationMappingExtension.clas
@@ -19,7 +19,7 @@ Name: org/eclipse/jface/text/ITextStore.class
 SHA-256-Digest: QxSoPiJShPyL8mXuZgRb29+48omgWF2ytkXtnjhtf+A=
 
 Name: org/eclipse/jface/text/templates/TemplateContext.class
-SHA-256-Digest: CLc0MXBwuh4p9qYbeowM5SYgU3Gi9Z0/POihhdsFJV0=
+SHA-256-Digest: pr/QzRkIenCzV7j+VJzmZ8Mroh4H0tp2ATlM/FzygDs=
 
 Name: org/eclipse/jface/text/IDocumentPartitionerExtension3.class
 SHA-256-Digest: ZWE5bPuXkvKuN5Eaeb89wokWM12v4I4zEN0cN1M/oPo=
@@ -114,7 +114,7 @@ Name: org/eclipse/jface/text/IRegion.class
 SHA-256-Digest: zpVde37ZiSJ5Zci/6wxTHdJKlKHf8JRQh0BwZkojUKE=
 
 Name: .api_description
-SHA-256-Digest: VDJ87OgWFpDEenC5Dn5EtX4ffhq/8GaD/6WGAgoruFw=
+SHA-256-Digest: wJY4my3wyycFAABkTrmFH2jVcT3ZxRMzAwIpNzUohms=
 
 Name: org/eclipse/jface/text/ILineTrackerExtension.class
 SHA-256-Digest: d6f6+mCy3zSsJLwzEmh5O49No39nZ6mSHHgY6FFphpA=
@@ -503,7 +503,7 @@ Name: org/eclipse/jface/text/IRepairableDocument.class
 SHA-256-Digest: Ef3PYNjcntHBlJFFmZrup9H1WAKAbg4JnuINefLIprw=
 
 Name: org/eclipse/text/templates/TemplatePersistenceData.class
-SHA-256-Digest: 5R7TPCqyIv3GybQX2NG1lPlgzVnSkHSe48gLGrPdCKU=
+SHA-256-Digest: JysMkpDIxex4T2yMlP7CkVLhKsEGIHPV5iy6z4S+rCk=
 
 Name: org/eclipse/jface/text/TreeLineTracker.class
 SHA-256-Digest: qlu/8CmXXp3HBbOSXaqKGGRV1IsuFRLGzrPMg0NJdjQ=

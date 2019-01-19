@@ -40,13 +40,13 @@ import org.eclipse.jdt.core.dom.PostfixExpression;
 import org.eclipse.jdt.core.dom.PrefixExpression;
 import org.eclipse.jdt.core.dom.PrimitiveType;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
+import org.eclipse.jdt.core.manipulation.CodeGeneration;
 
+import org.eclipse.jdt.internal.core.manipulation.StubUtility;
 import org.eclipse.jdt.internal.core.manipulation.dom.NecessaryParenthesesChecker;
 import org.eclipse.jdt.internal.corext.dom.ASTNodes;
 import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
 import org.eclipse.jdt.internal.corext.util.JdtFlags;
-
-import org.eclipse.jdt.ui.CodeGeneration;
 
 public class GetterSetterUtil {
 
@@ -137,22 +137,21 @@ public class GetterSetterUtil {
 
 		String lineDelim= "\n"; // Use default line delimiter, as generated stub has to be formatted anyway //$NON-NLS-1$
 		StringBuilder buf= new StringBuilder();
-		if (addComments) 
-		{
+		if (addComments) {
 			String comment= CodeGeneration.getSetterComment(field.getCompilationUnit(), parentType.getTypeQualifiedName('.'), setterName, field.getElementName(), typeName, argname, accessorName, lineDelim);
 			
 			// ZhengWei(HY) Add 2014-11-17 获取字段文档注释，并设置到Setter方法上。
-		    ISourceRange v_SourceRange = field.getJavadocRange();
-			if( null != v_SourceRange )
-			{
-			    String v_FieldComment = field.getSource().substring(0 ,v_SourceRange.getLength());
-			    
-			    if ( v_FieldComment != null )
+            ISourceRange v_SourceRange = field.getJavadocRange();
+            if( null != v_SourceRange )
+            {
+                String v_FieldComment = field.getSource().substring(0 ,v_SourceRange.getLength());
+                
+                if ( v_FieldComment != null )
                 {
-			        v_FieldComment = v_FieldComment.replaceAll("/\\*\\*" ,"").replaceAll("\\*/"  ,"").trim();
+                    v_FieldComment = v_FieldComment.replaceAll("/\\*\\*" ,"").replaceAll("\\*/"  ,"").trim();
                     if ( !"".equals(v_FieldComment) )
                     {
-    			        if ( comment == null )
+                        if ( comment == null )
                         {
                             comment = v_FieldComment;
                         }
@@ -162,13 +161,13 @@ public class GetterSetterUtil {
                         }
                     }
                 }
-			}
+            }
 
-			if (comment != null) 
-			{
-				buf.append(comment.replaceAll("%FieldComment%" ,""));
-				buf.append(lineDelim);
-			}
+            if (comment != null) 
+            {
+                buf.append(comment.replaceAll("%FieldComment%" ,""));
+                buf.append(lineDelim);
+            }
 		}
 		buf.append(JdtFlags.getVisibilityString(flags));
 		buf.append(' ');
@@ -226,9 +225,8 @@ public class GetterSetterUtil {
 
 		String lineDelim= "\n"; // Use default line delimiter, as generated stub has to be formatted anyway //$NON-NLS-1$
 		StringBuilder buf= new StringBuilder();
-		if (addComments) 
-		{
-			String comment = CodeGeneration.getGetterComment(field.getCompilationUnit(), parentType.getTypeQualifiedName('.'), getterName, field.getElementName(), typeName, accessorName, lineDelim);
+		if (addComments) {
+			String comment= CodeGeneration.getGetterComment(field.getCompilationUnit(), parentType.getTypeQualifiedName('.'), getterName, field.getElementName(), typeName, accessorName, lineDelim);
 			
 			// ZhengWei(HY) Add 2014-11-17 获取字段文档注释，并设置到Getter方法上。
             ISourceRange v_SourceRange = field.getJavadocRange();
@@ -252,12 +250,12 @@ public class GetterSetterUtil {
                     }
                 }
             }
-			
-			if (comment != null) 
-			{
-				buf.append(comment.replaceAll("%FieldComment%" ,""));
-				buf.append(lineDelim);
-			}
+            
+            if (comment != null) 
+            {
+                buf.append(comment.replaceAll("%FieldComment%" ,""));
+                buf.append(lineDelim);
+            }
 		}
 
 		buf.append(JdtFlags.getVisibilityString(flags));
