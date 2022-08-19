@@ -132,6 +132,14 @@ public class GetterSetterUtil {
 
 		String accessorName= StubUtility.getBaseName(field);
 		String argname= StubUtility.suggestArgumentName(project, accessorName, EMPTY);
+		String v_HYAName = argname;
+		
+		// ZhengWei(HY) Add 2022-08-19 Setter方法入参数前缀添加 i_
+		if ( argname != null )
+		{
+		    v_HYAName = "i_" + argname.substring(0 ,1).toUpperCase() +  argname.substring(1);
+		}
+		
 
 		boolean isStatic= Flags.isStatic(flags);
 		boolean isSync= Flags.isSynchronized(flags);
@@ -140,7 +148,7 @@ public class GetterSetterUtil {
 		String lineDelim= "\n"; // Use default line delimiter, as generated stub has to be formatted anyway //$NON-NLS-1$
 		StringBuilder buf= new StringBuilder();
 		if (addComments) {
-			String comment= CodeGeneration.getSetterComment(field.getCompilationUnit(), parentType.getTypeQualifiedName('.'), setterName, field.getElementName(), typeName, argname, accessorName, lineDelim);
+			String comment= CodeGeneration.getSetterComment(field.getCompilationUnit(), parentType.getTypeQualifiedName('.'), setterName, field.getElementName(), typeName, v_HYAName, accessorName, lineDelim);
 			
 			// ZhengWei(HY) Add 2014-11-17 获取字段文档注释，并设置到Setter方法上。
             ISourceRange v_SourceRange = field.getJavadocRange();
@@ -185,7 +193,7 @@ public class GetterSetterUtil {
 		buf.append('(');
 		buf.append(typeName);
 		buf.append(' ');
-		buf.append(argname);
+		buf.append(v_HYAName);
 		buf.append(") {"); //$NON-NLS-1$
 		buf.append(lineDelim);
 
@@ -196,7 +204,7 @@ public class GetterSetterUtil {
 			else
 				fieldName= "this." + fieldName; //$NON-NLS-1$
 		}
-		String body= CodeGeneration.getSetterMethodBodyContent(field.getCompilationUnit(), parentType.getTypeQualifiedName('.'), setterName, fieldName, argname, lineDelim);
+		String body= CodeGeneration.getSetterMethodBodyContent(field.getCompilationUnit(), parentType.getTypeQualifiedName('.'), setterName, fieldName, v_HYAName, lineDelim);
 		if (body != null) {
 			buf.append(body);
 		}
