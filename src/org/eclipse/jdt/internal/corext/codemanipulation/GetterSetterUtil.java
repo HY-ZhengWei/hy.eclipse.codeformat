@@ -15,7 +15,6 @@
 package org.eclipse.jdt.internal.corext.codemanipulation;
 
 import org.eclipse.core.runtime.CoreException;
-
 import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaProject;
@@ -41,7 +40,6 @@ import org.eclipse.jdt.core.dom.PrefixExpression;
 import org.eclipse.jdt.core.dom.PrimitiveType;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.jdt.core.manipulation.CodeGeneration;
-
 import org.eclipse.jdt.internal.core.manipulation.StubUtility;
 import org.eclipse.jdt.internal.core.manipulation.dom.NecessaryParenthesesChecker;
 import org.eclipse.jdt.internal.corext.dom.ASTNodes;
@@ -64,6 +62,10 @@ public class GetterSetterUtil {
 	private static String getGetterName(IField field, String[] excludedNames, boolean useIsForBoolGetters) throws JavaModelException {
 		if (excludedNames == null) {
 			excludedNames= EMPTY;
+		}
+		IType type= field.getDeclaringType();
+		if (type != null && type.isRecord() && !Flags.isStatic(field.getFlags())) {
+			return field.getElementName();
 		}
 		return getGetterName(field.getJavaProject(), field.getElementName(), field.getFlags(), useIsForBoolGetters && JavaModelUtil.isBoolean(field), excludedNames);
 	}
@@ -163,7 +165,7 @@ public class GetterSetterUtil {
                 }
             }
 
-            if (comment != null) 
+            if (comment != null)
             {
                 buf.append(comment.replaceAll("%FieldComment%" ,""));
                 buf.append(lineDelim);
@@ -251,7 +253,7 @@ public class GetterSetterUtil {
                 }
             }
             
-            if (comment != null) 
+            if (comment != null)
             {
                 buf.append(comment.replaceAll("%FieldComment%" ,""));
                 buf.append(lineDelim);
@@ -351,7 +353,7 @@ public class GetterSetterUtil {
 		ASTNode block= statement.getParent();
 		boolean isBlock= block.getNodeType() == ASTNode.BLOCK || block.getNodeType() == ASTNode.SWITCH_STATEMENT;
 		boolean isControlStatemenBody= ASTNodes.isControlStatementBody(statement.getLocationInParent());
-		return isStatement || !(isBlock || isControlStatemenBody);
+		return isStatement || (!isBlock && !isControlStatemenBody);
 	}
 
 	private static Expression createInfixInvocationFromPostPrefixExpression(InfixExpression.Operator operator, Expression getterExpression, AST ast, ITypeBinding variableType, boolean is50OrHigher) {
