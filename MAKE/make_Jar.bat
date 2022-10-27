@@ -1,9 +1,9 @@
-set JDT_VERSION=org.eclipse.jdt.core.manipulation_1.16.100.v20220513-2002
+set JDT_VERSION=org.eclipse.jdt.core.manipulation_1.16.200.v20220824-0551
 set JDT_Make=org.eclipse.jdt.core.manipulation
 set JDT_File1=org\eclipse\jdt\internal\core\manipulation
 set JDT_File2=org\eclipse\jdt\internal\corext\codemanipulation
 
-set TEXT_VERSION=org.eclipse.text_3.12.100.v20220506-1404
+set TEXT_VERSION=org.eclipse.text_3.12.200.v20220817-1340
 set TEXT_Make=org.eclipse.text
 set TEXT_File=org\eclipse\jface\text\templates
 
