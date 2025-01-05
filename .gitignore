@@ -3,3 +3,4 @@
 bin\
 \bin
 
+bin/org/eclipse/jdt/internal/corext/codemanipulation/GetterSetterUtil.class
